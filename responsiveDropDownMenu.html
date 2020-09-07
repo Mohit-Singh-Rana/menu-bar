@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Drop-Down Menu Bar</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        background:linear-gradient(to right,rgb(17, 226, 17) 40%,cyan);
+      }
+
+      li {
+        list-style-type: none;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+        text-transform: capitalize;
+        border: 2px solid greenyellow;
+        padding: 5px 10px;
+        border-radius: 999em;
+      }
+      #logo{font-size: 2em;}
+
+      .container {
+        background-color: green;
+        min-height: 10vh;
+        padding-top: 1em;
+      }
+
+      .container ul {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .menu ul a{
+        margin: 0 2.5em;
+      }
+
+      input{display: none;}
+      label{
+        font-size:2em;
+        display: none;
+      }
+
+      a:hover{
+        background-color: greenyellow;
+      }
+
+      #ent{position: relative;}
+
+      .dd{
+        position: absolute;
+      top: 3.4em;
+      min-height: 15vh;
+      background-color: green;
+      
+      }
+      .dd ul{
+        flex-direction: column;
+        display: none;
+      }
+
+      
+
+      .dd li{
+        align-self: start;
+        margin-bottom: .8em;
+      }
+     
+      .menu li:hover .dd ul{
+        display: block;
+      }
+      
+@media screen and (max-width: 600px){
+ 
+  label{
+    display: block;
+    position: relative;
+    top: -1.5em;
+    right: -90%;
+    margin-bottom: -1.5em;
+    
+  }
+
+  .container ul{
+   flex-direction: column;
+    width: 100vw;
+    align-items: flex-start;
+  }
+  .container ul a{
+    display: block;
+    margin:  0;
+    padding: 5px 0;
+    border: none;
+    text-align: center;
+    width: 100vw;
+    border-bottom: 2px solid black;
+  }
+  .dd{
+    position: relative;
+    top: .1em;
+    min-height: 0vh;
+  }
+
+  .dd li{margin:  0;}
+      .dd li:nth-child(1){margin-top: -2px; }
+
+  .menu{
+    
+    display: none;
+  }
+ 
+  #ham:checked~.menu {
+    display: block;}
+
+}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul>
+        <li id="logo">LOGO</li>
+        <input type="checkbox" name="" id="ham">
+        <label for="ham">&#9776</label>
+        <div class="menu">
+          <ul>
+            <li><a href="#">search</a></li>
+            <li>
+              <a href="#" id="ent">Entertainment +</a>
+              <div class="dd">
+                    <ul>
+                          <li><a href="#">hindi songs</a></li>
+                          <li><a href="#">english songs</a></li>
+                          <li><a href="#">gadwali songs</a></li>
+                          <li><a href="#">punjabi songs</a></li>
+                        </ul>
+                     </div>
+            </li>
+            <li><a href="#">signup</a></li>
+          </ul>
+        </div>
+      </ul>
+    </div>
+    <h2 style="margin: 7em; text-transform: uppercase; text-align: center;">
+      resposive <br> drop down menu</h2>
+  </body>
+</html>
